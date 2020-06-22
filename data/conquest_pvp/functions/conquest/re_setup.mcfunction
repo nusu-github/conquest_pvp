@@ -1,0 +1,10 @@
+scoreboard players set @s recharge 0
+scoreboard players set @s tick 0
+scoreboard players set @s seconds 0
+execute as @s[scores={assassin=1}] run function conquest_pvp:conquest/job/assassin
+execute as @s[scores={attacker=1}] run function conquest_pvp:conquest/job/attacker
+execute as @s[scores={tank=1}] run function conquest_pvp:conquest/job/tank
+execute as @s[scores={archer=1}] run function conquest_pvp:conquest/job/archer
+execute as @s[scores={support=1}] run function conquest_pvp:conquest/job/support
+replaceitem entity @a[team=red] hotbar.8 red_stained_glass_pane 1
+replaceitem entity @a[team=blue] hotbar.8 blue_stained_glass_pane 1
