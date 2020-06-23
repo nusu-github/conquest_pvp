@@ -37,7 +37,7 @@ kill @e[type=item,nbt={Item: {id: "minecraft:poppy"}}]
 kill @e[type=item,nbt={Item: {id: "minecraft:iron_ingot"}}]
 function conquest_pvp:conquest/item_check
 
-execute as @a[scores={used_potion=1..}] run replaceitem entity @s hotbar.7 air 1
+replaceitem entity @a[scores={used_potion=1..}] hotbar.7 air 1
 
 bossbar set red_total_point players @a
 bossbar set blue_total_point players @a
@@ -62,5 +62,3 @@ execute if score レッドチーム error matches 10000.. run effect give @a[tea
 execute if score ブルーチーム error matches 10000.. run effect give @a[team=red] resistance 1 1
 execute if score レッドチーム error matches 10000.. run effect give @a[team=blue] jump_boost 1 1
 execute if score ブルーチーム error matches 10000.. run effect give @a[team=red] jump_boost 1 1
-
-execute at @a[scores={tank=1}] as @s run execute if entity @p[scores={attacker=1},distance=..3] run effect give @a[scores={tank=1},distance=..3] resistance 1 1
