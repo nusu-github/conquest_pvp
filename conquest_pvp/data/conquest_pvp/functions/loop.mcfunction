@@ -2,6 +2,7 @@
 
 # リスポーン場所を常に設定し続ける　絶対重いのでどうにかしたい所存
 execute unless score conquest conquest matches 1 as @a at @s run spawnpoint @s ~ ~ ~
+effect give @a saturation 1 1
 # リスポーン
 execute if score conquest conquest matches 1 as @a if score @s death matches 1.. if score @s respawn_time matches -1 run function conquest_pvp:respawn/respawn
 execute if score conquest conquest matches 1 as @a[scores={death=1..}] unless entity @s[x=135,y=114,z=74,dx=12,dy=-5,dz=9] run tp @s 141 111 78

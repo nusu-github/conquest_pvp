@@ -25,7 +25,6 @@ gamerule doInsomnia false
 scoreboard objectives add death deathCount "計算用_デス数"
 scoreboard objectives add respawn_time dummy "リスポーン時間"
 scoreboard objectives add target dummy "ターゲット"
-scoreboard objectives add food food "満腹度"
 
 ## 表示
 scoreboard objectives add death_count deathCount "デス数"
@@ -70,7 +69,6 @@ execute if score conquest conquest matches 1 run function conquest_pvp:conquest/
 scoreboard players reset death
 scoreboard players reset respawn_time
 scoreboard players reset target
-scoreboard players reset food
 scoreboard players reset death_count
 scoreboard players reset kill_count
 scoreboard players reset error
@@ -104,7 +102,6 @@ scoreboard players reset item
 scoreboard players set @a death 0
 scoreboard players set @a respawn_time -1
 scoreboard players set @a target 0
-scoreboard players set @a food 0
 scoreboard players set @a death_count 0
 scoreboard players set @a kill_count 0
 scoreboard players set @a error 0
