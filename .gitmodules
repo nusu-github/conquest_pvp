@@ -1,0 +1,6 @@
+[submodule "Datapack-Utilities"]
+	path = Datapack-Utilities
+	url = https://github.com/ImCoolYeah105/Datapack-Utilities.git
+[submodule "Load"]
+	path = Load
+	url = https://github.com/LanternMC/Load.git
