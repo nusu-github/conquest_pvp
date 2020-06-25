@@ -134,3 +134,5 @@ scoreboard players set @a tick 0
 scoreboard players set @a seconds 0
 scoreboard players set @a is_succeeded 0
 scoreboard players set @e item 0
+
+say セットアップ完了

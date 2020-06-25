@@ -1,7 +1,7 @@
 {
- "replace":"false",
- "values": [
- "math:setup",
- "mcprng:load"
- ]
+    "replace": "false",
+    "values": [
+        "math:setup",
+        "mcprng:load"
+    ]
 }
