@@ -23,9 +23,11 @@ tp @e[x=0,z=-11,dx=2,dz=1] 120 110 72
 
 # タイマー
 execute as @e[tag=30_timer] run function conquest_pvp:time
-execute as @e[tag=30_timer] run title @a actionbar [{"text":"残り時間:"},{"score":{"name":"@e[tag=30_timer]","objective":"seconds"}},{"text":"/30"}]
-execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] seconds matches 27.. run title @a title {"text":"3秒前"}
-execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] seconds matches 28.. run title @a title {"text":"2"}
-execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] seconds matches 29.. run title @a title {"text":"1"}
-execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] seconds matches 30.. run function conquest_pvp:conquest/start
+scoreboard players operation @e[tag=30_timer] count_down -= @e[tag=30_timer] seconds
+execute as @e[tag=30_timer,scores={seconds=1..}] run scoreboard players set @s seconds 0
+execute as @e[tag=30_timer] run title @a actionbar [{"text":"残り:"},{"score":{"name":"@e[tag=30_timer]","objective":"count_down"}},{"text":"秒"}]
+execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 3 run title @a title {"text":"3秒前"}
+execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 2 run title @a title {"text":"2"}
+execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 1 run title @a title {"text":"1"}
+execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 0 run function conquest_pvp:conquest/start
 

@@ -1,18 +1,9 @@
-data modify entity @e[type=spectral_arrow,nbt={pickup: 1b},limit=1] damage set value 0d
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:slowness"},limit=1] damage set value 0d
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:swiftness"},limit=1] damage set value 0d
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:healing"},limit=1] damage set value 0d
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:weakness"},limit=1] damage set value 0d
-data modify entity @e[type=spectral_arrow,nbt={pickup: 1b},limit=1] crit set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:slowness"},limit=1] crit set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:swiftness"},limit=1] crit set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:healing"},limit=1] crit set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:weakness"},limit=1] crit set value 0b
-data modify entity @e[type=spectral_arrow,nbt={pickup: 1b},limit=1] ShotFromCrossbow set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:slowness"},limit=1] ShotFromCrossbow set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:swiftness"},limit=1] ShotFromCrossbow set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:healing"},limit=1] ShotFromCrossbow set value 0b
-data modify entity @e[type=arrow,nbt={Potion: "minecraft:weakness"},limit=1] ShotFromCrossbow set value 0b
+execute as @e[type=spectral_arrow] run data modify entity @s damage set value 0d
+execute as @e[type=spectral_arrow] run data modify entity @s crit set value 0b
+execute as @e[type=spectral_arrow] run data modify entity @s ShotFromCrossbow set value 0b
+execute as @e[type=arrow,nbt={Color: 16777215}] run data modify entity @s damage set value 0d
+execute as @e[type=arrow,nbt={Color: 16777215}] run data modify entity @s crit set value 0b
+execute as @e[type=arrow,nbt={Color: 16777215}] run data modify entity @s ShotFromCrossbow set value 0b
 
 execute as @s[team=red,scores={used_crossbow=1..}] at @s run tag @e[type=arrow,tag=,sort=nearest,limit=1] add arrow_red
 execute as @s[team=blue,scores={used_crossbow=1..}] at @s run tag @e[type=arrow,tag=,sort=nearest,limit=1] add arrow_blue

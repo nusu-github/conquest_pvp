@@ -30,7 +30,23 @@ scoreboard objectives add target dummy "ターゲット"
 scoreboard objectives add death_count deathCount "デス数"
 scoreboard objectives add kill_count custom:player_kills "キル数"
 
-### コンクエスト
+## ジョブ
+scoreboard objectives add assassin dummy "アサシン"
+scoreboard objectives add archer dummy "アーチャー"
+scoreboard objectives add attacker dummy "アタッカー"
+scoreboard objectives add tank dummy "タンク"
+scoreboard objectives add support dummy "サポート"
+
+## 判定
+scoreboard objectives add used_stick used:carrot_on_a_stick
+scoreboard objectives add used_shield custom:damage_blocked_by_shield
+scoreboard objectives add used_crossbow used:crossbow
+scoreboard objectives add used_potion used:potion
+scoreboard objectives add inground_arrow dummy
+scoreboard objectives add sneak custom:sneak_time
+scoreboard objectives add is_succeeded dummy
+
+## その他
 scoreboard objectives add error dummy "誤差"
 scoreboard objectives add total_point dummy "トータルポイント"
 scoreboard objectives add conquest dummy "コンクエストフラグ"
@@ -38,21 +54,9 @@ scoreboard objectives add red dummy "レッドポイント"
 scoreboard objectives add blue dummy "ブルーポイント"
 scoreboard objectives add stage_red dummy "レッドステージ"
 scoreboard objectives add stage_blue dummy "ブルーステージ"
-scoreboard objectives add assassin dummy "アサシン"
-scoreboard objectives add archer dummy "アーチャー"
-scoreboard objectives add attacker dummy "アタッカー"
-scoreboard objectives add tank dummy "タンク"
-scoreboard objectives add support dummy "サポート"
 scoreboard objectives add one_damage dummy "ダメージでキャンセル"
 scoreboard objectives add recharge dummy "リチャージ"
-scoreboard objectives add used_stick used:carrot_on_a_stick
-scoreboard objectives add used_shield custom:damage_blocked_by_shield
-scoreboard objectives add used_crossbow used:crossbow
-scoreboard objectives add used_potion used:potion
-scoreboard objectives add inground_arrow dummy
-scoreboard objectives add sneak custom:sneak_time
-scoreboard objectives add auto_aim dummy
-scoreboard objectives add is_succeeded dummy
+
 
 ## ダメージ
 scoreboard objectives add damage custom:damage_taken "ダメージ"
@@ -61,6 +65,7 @@ scoreboard objectives add health health "体力"
 ## 時間
 scoreboard objectives add tick dummy "ティック"
 scoreboard objectives add seconds dummy "秒"
+scoreboard objectives add count_down dummy
 scoreboard objectives add item dummy
 
 ### リセット
@@ -98,6 +103,7 @@ scoreboard players reset tick
 scoreboard players reset seconds
 scoreboard players reset is_succeeded
 scoreboard players reset item
+scoreboard players reset count_down
 
 scoreboard players set @a death 0
 scoreboard players set @a respawn_time -1
@@ -124,12 +130,12 @@ scoreboard players set @a used_crossbow 0
 scoreboard players set @a used_potion 0
 scoreboard players set @a inground_arrow 0
 scoreboard players set @a sneak 0
-scoreboard players set @a auto_aim 0
 scoreboard players set @a damage 0
 scoreboard players set @a health 0
 scoreboard players set @a tick 0
 scoreboard players set @a seconds 0
 scoreboard players set @a is_succeeded 0
 scoreboard players set @e item 0
+scoreboard players set @e count_down 0
 
 say セットアップ完了

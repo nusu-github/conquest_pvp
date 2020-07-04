@@ -16,7 +16,7 @@ execute as @e[tag=northeast] if entity @a[team=blue,x=96,y=123,z=24,dx=8,dy=20,d
 execute as @e[tag=northwest] if entity @a[team=blue,x=144,y=123,z=24,dx=-8,dy=20,dz=-8] run function conquest_pvp:conquest/blue
 execute as @e[tag=southeast] if entity @a[team=blue,x=96,y=123,z=-24,dx=8,dy=20,dz=8] run function conquest_pvp:conquest/blue
 execute as @e[tag=southwest] if entity @a[team=blue,x=144,y=123,z=-24,dx=-8,dy=20,dz=8] run function conquest_pvp:conquest/blue
- 
+
 ### トータルポイント換算
 execute if score @e[tag=northeast,limit=1] red matches 250.. run scoreboard players add レッドチーム total_point 1
 execute if score @e[tag=northwest,limit=1] red matches 250.. run scoreboard players add レッドチーム total_point 1
@@ -36,7 +36,7 @@ data modify entity @e[type=arrow,nbt={pickup: 1b},limit=1] pickup set value 0b
 kill @e[type=item,nbt={Item: {id: "minecraft:poppy"}}]
 kill @e[type=item,nbt={Item: {id: "minecraft:iron_ingot"}}]
 function conquest_pvp:conquest/item_check
-
+# 使ったら消去
 replaceitem entity @a[scores={used_potion=1..}] hotbar.7 air 1
 
 bossbar set red_total_point players @a

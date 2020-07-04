@@ -15,4 +15,5 @@ execute as @s[tag=blue,scores={seconds=1..}] at @a[team=red,sort=nearest,distanc
 execute as @s[scores={seconds=1..}] run scoreboard players set @s seconds 0
 execute at @s[tag=iron_golem] as @e[type=iron_golem,distance=..1] run tp @e[type=iron_golem,sort=nearest,distance=..1] ~ ~ ~ ~180 ~
 execute at @s[tag=iron_golem] unless entity @e[type=iron_golem,distance=..1] run particle explosion ~ ~ ~ 0 0 0 1 1 normal
+execute at @s[tag=iron_golem] unless entity @e[type=iron_golem,distance=..1] run summon experience_orb ~ ~ ~ {Value: 5}
 execute at @s[tag=iron_golem] unless entity @e[type=iron_golem,distance=..1] run kill @s
