@@ -5,7 +5,7 @@ replaceitem entity @s hotbar.0 diamond_hoe{display:{Name:'{"text":"命を刈り�
 ## 固定スキル 透明化
 replaceitem entity @s hotbar.1 carrot_on_a_stick{display: {Name: '[{"text":"固定スキル1:"},{"translate":"透明化"}]', Lore: ['{"text":"アサシンの固有スキル:透明化"}', '{"text":"30秒かダメージを受けると効果がなくなる"}']}} 1
 
-replaceitem entity @s hotbar.7 potion{Potion: "minecraft:healing"} 1
+replaceitem entity @s hotbar.7 minecraft:splash_potion{Potion:"minecraft:strong_healing"} 1
 ## 防具一式消去
 replaceitem entity @s armor.head air 1
 replaceitem entity @s armor.chest air 1
@@ -17,3 +17,6 @@ scoreboard players set @s assassin 1
 scoreboard players set @s attacker 0
 scoreboard players set @s tank 0
 scoreboard players set @s support 0
+## チーム表示
+replaceitem entity @a[team=red] hotbar.8 red_stained_glass_pane 1
+replaceitem entity @a[team=blue] hotbar.8 blue_stained_glass_pane 1

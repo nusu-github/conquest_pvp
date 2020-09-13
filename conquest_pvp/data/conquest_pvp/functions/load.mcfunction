@@ -44,6 +44,7 @@ scoreboard objectives add used_crossbow used:crossbow
 scoreboard objectives add used_potion used:potion
 scoreboard objectives add inground_arrow dummy
 scoreboard objectives add sneak custom:sneak_time
+scoreboard objectives add sneak_time dummy
 scoreboard objectives add is_succeeded dummy
 
 ## その他
@@ -96,6 +97,7 @@ scoreboard players reset used_crossbow
 scoreboard players reset used_potion
 scoreboard players reset inground_arrow
 scoreboard players reset sneak
+scoreboard players reset sneak_time
 scoreboard players reset auto_aim
 scoreboard players reset damage
 scoreboard players reset health
@@ -130,6 +132,7 @@ scoreboard players set @a used_crossbow 0
 scoreboard players set @a used_potion 0
 scoreboard players set @a inground_arrow 0
 scoreboard players set @a sneak 0
+scoreboard players set @a sneak_time 0
 scoreboard players set @a damage 0
 scoreboard players set @a health 0
 scoreboard players set @a tick 0

@@ -13,7 +13,7 @@ execute as @s[scores={support=1}] run function conquest_pvp:conquest/skill/suppo
 execute as @e[type=armor_stand] at @s run function conquest_pvp:conquest/skill/ciws
 
 # オートエイム
-execute as @s[scores={archer=1,sneak=1..}] run function conquest_pvp:conquest/skill/auto_aim
+# execute as @s[scores={archer=1,sneak=1..}] run function conquest_pvp:conquest/skill/auto_aim
 
 execute as @a[scores={one_damage=1..,damage=1..}] store success score @s is_succeeded run effect clear @s
 execute as @a[scores={one_damage=1..,damage=1..,is_succeeded=1..}] run scoreboard players set @s one_damage 0

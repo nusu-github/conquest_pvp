@@ -58,6 +58,8 @@ scoreboard players set @a inground_arrow 0
 scoreboard players set @a used_potion 0
 scoreboard players set conquest conquest 0
 scoreboard objectives setdisplay sidebar kill_count
+scoreboard players set @a sneak 0
+scoreboard players set @a sneak_time 0
 
 team remove red
 team remove blue

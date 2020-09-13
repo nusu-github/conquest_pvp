@@ -5,6 +5,8 @@
 execute as @a run function conquest_pvp:conquest/skill
 execute as @a[scores={recharge=1}] run function conquest_pvp:conquest/recharge
 
+execute as @a run function conquest_pvp:conquest/special_skill
+
 ## 拠点
 ### レッド
 execute as @e[tag=northeast] if entity @a[team=red,x=96,y=123,z=24,dx=8,dy=20,dz=-8] run function conquest_pvp:conquest/red

@@ -5,7 +5,7 @@ replaceitem entity @s hotbar.0 shield{display:{Name:'{"text":"唯一無二の盾
 ## 固有スキル 唯一無二の盾
 replaceitem entity @s hotbar.1 carrot_on_a_stick{display: {Name: '[{"text":"固定スキル1:"},{"translate":"唯一無二の盾"}]', Lore: ['{"text":"タンクの固有スキル:唯一無二の盾"}', '{"text":"5秒間リジェネ+攻撃完全無効化"}']}} 1
 
-replaceitem entity @s hotbar.7 potion{Potion: "minecraft:healing"} 1
+replaceitem entity @s hotbar.7 minecraft:splash_potion{Potion:"minecraft:strong_healing"} 1
 ## 防具一式
 replaceitem entity @s armor.head iron_helmet{Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.knockbackResistance",Name:"generic.knockbackResistance",Amount:1024,Operation:0,UUIDLeast:-1903306,UUIDMost:5315173},{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:10,Operation:0,UUIDLeast:-9376972,UUIDMost:9426007}]} 1
 replaceitem entity @s armor.chest iron_chestplate{Unbreakable:1b} 1
@@ -17,3 +17,6 @@ scoreboard players set @s assassin 0
 scoreboard players set @s attacker 0
 scoreboard players set @s tank 1
 scoreboard players set @s support 0
+## チーム表示
+replaceitem entity @a[team=red] hotbar.8 red_stained_glass_pane 1
+replaceitem entity @a[team=blue] hotbar.8 blue_stained_glass_pane 1

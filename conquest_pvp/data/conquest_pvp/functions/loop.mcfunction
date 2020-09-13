@@ -6,10 +6,9 @@ effect give @a saturation 1 1
 # リスポーン
 execute if score conquest conquest matches 1 as @a if score @s death matches 1.. if score @s respawn_time matches -1 run function conquest_pvp:respawn/respawn
 execute if score conquest conquest matches 1 as @a[scores={death=1..}] unless entity @s[x=135,y=114,z=74,dx=12,dy=-5,dz=9] run tp @s 141 111 78
-effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] instant_health 1 100
-effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] resistance 1 100
-# 拘束
-execute as @e if score @s target matches 1 run function conquest_pvp:target
+effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] instant_health 1 126
+effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] resistance 1 126
+kill @e[x=135,y=114,z=74,dx=12,dy=-5,dz=9,type=!player]
 # コンクエストモード時コンクエスト用のチェックを実行
 execute if score conquest conquest matches 1 run function conquest_pvp:conquest/check
 
@@ -25,7 +24,7 @@ tp @e[x=0,z=-11,dx=2,dz=1] 120 110 72
 execute as @e[tag=30_timer] run function conquest_pvp:time
 scoreboard players operation @e[tag=30_timer] count_down -= @e[tag=30_timer] seconds
 execute as @e[tag=30_timer,scores={seconds=1..}] run scoreboard players set @s seconds 0
-execute as @e[tag=30_timer] run title @a actionbar [{"text":"残り:"},{"score":{"name":"@e[tag=30_timer]","objective":"count_down"}},{"text":"秒"}]
+execute as @e[tag=30_timer] run title @a actionbar [{"text":"残り:"},{"score":{"name":"@e[tag=30_timer,limit=1]","objective":"count_down"}},{"text":"秒"}]
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 3 run title @a title {"text":"3秒前"}
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 2 run title @a title {"text":"2"}
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 1 run title @a title {"text":"1"}
