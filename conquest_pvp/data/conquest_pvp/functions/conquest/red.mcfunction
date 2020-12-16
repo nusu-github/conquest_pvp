@@ -1,5 +1,5 @@
 ## 何か色々判定がバグるので判定用のエンティティ召喚
-execute as @s at @s if score @s red matches 250.. run summon area_effect_cloud ~ ~ ~ {Duration: 32768, Tags: ["decision_red"]}
+execute as @s at @s if score @s red matches 250.. run summon minecraft:area_effect_cloud ~ ~ ~ {CustomNameVisible:0b,Duration:32768,Tags:["decision_red"],CustomName:'{"text":"判定"}'}
 execute as @s if score @s red matches 250.. run team join red
 ## 拠点状態表示
 title @a[team=red,x=96,y=123,z=24,dx=8,dy=20,dz=-8] actionbar [{"text":"占領状態:"},{"score":{"name":"@e[tag=northeast,limit=1]","objective":"red"}},{"text":"/250"}]

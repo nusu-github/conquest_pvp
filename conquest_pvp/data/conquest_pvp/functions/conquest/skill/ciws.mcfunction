@@ -1,5 +1,6 @@
 #ダメージ判定
-execute at @s[tag=!iron_golem] unless entity @e[type=iron_golem,distance=..1] run summon iron_golem ~ ~ ~ {NoGravity: 1b, Silent: 1b, NoAI: 1b, Health: 1f, Attributes: [{Name: generic.maxHealth, Base: 1}, {Name: generic.armor, Base: 0}]}
+execute as @s[tag=red] at @s[tag=!iron_golem] unless entity @e[type=iron_golem,distance=..1] run summon iron_golem ~ ~ ~ {NoGravity:1b,Silent:1b,NoAI:1b,Health:1f,CustomName:'{"text":"red"}',Attributes:[{Name:generic.maxHealth,Base:1}]}
+execute as @s[tag=blue] at @s[tag=!iron_golem] unless entity @e[type=iron_golem,distance=..1] run summon iron_golem ~ ~ ~ {NoGravity:1b,Silent:1b,NoAI:1b,Health:1f,CustomName:'{"text":"blue"}',Attributes:[{Name:generic.maxHealth,Base:1}]}
 execute at @s if entity @e[type=iron_golem,distance=..1] run tag @s add iron_golem
 effect clear @s
 effect clear @e[type=iron_golem]

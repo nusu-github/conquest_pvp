@@ -9,15 +9,15 @@ execute as @a run function conquest_pvp:conquest/special_skill
 
 ## 拠点
 ### レッド
-execute as @e[tag=northeast] if entity @a[team=red,x=96,y=123,z=24,dx=8,dy=20,dz=-8] run function conquest_pvp:conquest/red
-execute as @e[tag=northwest] if entity @a[team=red,x=144,y=123,z=24,dx=-8,dy=20,dz=-8] run function conquest_pvp:conquest/red
-execute as @e[tag=southeast] if entity @a[team=red,x=96,y=123,z=-24,dx=8,dy=20,dz=8] run function conquest_pvp:conquest/red
-execute as @e[tag=southwest] if entity @a[team=red,x=144,y=123,z=-24,dx=-8,dy=20,dz=8] run function conquest_pvp:conquest/red
+execute as @a[team=red,x=96,y=123,z=24,dx=8,dy=20,dz=-8] run execute as @e[tag=northeast] run function conquest_pvp:conquest/red
+execute as @a[team=red,x=144,y=123,z=24,dx=-8,dy=20,dz=-8] run execute as @e[tag=northwest] run function conquest_pvp:conquest/red
+execute as @a[team=red,x=96,y=123,z=-24,dx=8,dy=20,dz=8] run execute as @e[tag=southeast] run function conquest_pvp:conquest/red
+execute as @a[team=red,x=144,y=123,z=-24,dx=-8,dy=20,dz=8] run execute as @e[tag=southwest] run function conquest_pvp:conquest/red
 ### ブルー
-execute as @e[tag=northeast] if entity @a[team=blue,x=96,y=123,z=24,dx=8,dy=20,dz=-8] run function conquest_pvp:conquest/blue
-execute as @e[tag=northwest] if entity @a[team=blue,x=144,y=123,z=24,dx=-8,dy=20,dz=-8] run function conquest_pvp:conquest/blue
-execute as @e[tag=southeast] if entity @a[team=blue,x=96,y=123,z=-24,dx=8,dy=20,dz=8] run function conquest_pvp:conquest/blue
-execute as @e[tag=southwest] if entity @a[team=blue,x=144,y=123,z=-24,dx=-8,dy=20,dz=8] run function conquest_pvp:conquest/blue
+execute as @a[team=blue,x=96,y=123,z=24,dx=8,dy=20,dz=-8] run execute as @e[tag=northeast] run function conquest_pvp:conquest/blue
+execute as @a[team=blue,x=144,y=123,z=24,dx=-8,dy=20,dz=-8] run execute as @e[tag=northwest] run function conquest_pvp:conquest/blue
+execute as @a[team=blue,x=96,y=123,z=-24,dx=8,dy=20,dz=8] run execute as @e[tag=southeast] run function conquest_pvp:conquest/blue
+execute as @a[team=blue,x=144,y=123,z=-24,dx=-8,dy=20,dz=8] run execute as @e[tag=southwest] run function conquest_pvp:conquest/blue
 
 ### トータルポイント換算
 execute if score @e[tag=northeast,limit=1] red matches 250.. run scoreboard players add レッドチーム total_point 1

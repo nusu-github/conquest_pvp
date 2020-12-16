@@ -29,6 +29,8 @@ scoreboard objectives add target dummy "ターゲット"
 ## 表示
 scoreboard objectives add death_count deathCount "デス数"
 scoreboard objectives add kill_count custom:player_kills "キル数"
+scoreboard objectives remove kill_count
+scoreboard objectives add kill_count custom:player_kills "キル数"
 
 ## ジョブ
 scoreboard objectives add assassin dummy "アサシン"
@@ -46,6 +48,7 @@ scoreboard objectives add inground_arrow dummy
 scoreboard objectives add sneak custom:sneak_time
 scoreboard objectives add sneak_time dummy
 scoreboard objectives add is_succeeded dummy
+scoreboard objectives add food food
 
 ## その他
 scoreboard objectives add error dummy "誤差"
@@ -78,6 +81,7 @@ scoreboard players reset target
 scoreboard players reset death_count
 scoreboard players reset kill_count
 scoreboard players reset error
+scoreboard players reset food
 scoreboard players reset total_point
 scoreboard players reset conquest
 scoreboard players reset red
@@ -112,6 +116,7 @@ scoreboard players set @a respawn_time -1
 scoreboard players set @a target 0
 scoreboard players set @a death_count 0
 scoreboard players set @a kill_count 0
+scoreboard players set @a food 0
 scoreboard players set @a error 0
 scoreboard players set @a total_point 0
 scoreboard players set @a conquest 0

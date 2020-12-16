@@ -9,7 +9,7 @@ execute as @s[scores={tank=1,used_shield=1..}] run function conquest_pvp:conques
 # アーチャー　固定スキル1
 execute as @s[scores={archer=1,used_stick=1..}] run function conquest_pvp:conquest/skill/explosion
 # サポート　固定スキル全部
-execute as @s[scores={support=1}] run function conquest_pvp:conquest/skill/support
+execute as @s[scores={support=1,used_crossbow=1..}] run function conquest_pvp:conquest/skill/support
 execute as @e[type=armor_stand] at @s run function conquest_pvp:conquest/skill/ciws
 
 # オートエイム

@@ -30,7 +30,6 @@ execute as @s store success score @s inground_arrow run kill @e[type=spectral_ar
 execute as @a[scores={inground_arrow=1..}] run scoreboard players set @s used_crossbow 0
 execute as @s store success score @s inground_arrow run kill @e[type=arrow,nbt={inGround: 1b},tag=!]
 execute as @a[scores={inground_arrow=1..}] run scoreboard players set @s used_crossbow 0
-execute as @s[scores={used_crossbow=1..}] run scoreboard players set @s recharge 1
+execute as @s[] run scoreboard players set @s recharge 1
 
-execute as @a[scores={used_crossbow=2..}] run scoreboard players set @s used_crossbow 0
-execute as @a[scores={used_crossbow=2..}] run scoreboard players set @s recharge 1
+execute as @a[scores={used_crossbow=1..}] run scoreboard players set @s recharge 1

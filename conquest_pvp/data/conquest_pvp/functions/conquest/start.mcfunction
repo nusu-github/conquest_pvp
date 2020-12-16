@@ -17,5 +17,6 @@ execute as @a[scores={support=1}] run function conquest_pvp:conquest/job/support
 replaceitem entity @a[team=red] hotbar.8 red_stained_glass_pane 1
 replaceitem entity @a[team=blue] hotbar.8 blue_stained_glass_pane 1
 title @a title {"text":"ゲームスタート！"}
+say 勝利しろ！ 
 effect clear @a
 kill @e[tag=30_timer]
