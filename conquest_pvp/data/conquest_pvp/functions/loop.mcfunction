@@ -3,6 +3,13 @@
 # リスポーン場所を常に設定し続ける　絶対重いのでどうにかしたい所存
 execute unless score conquest conquest matches 1 as @a at @s run spawnpoint @s ~ ~ ~
 effect give @a[scores={food=..19}] saturation 1 255
+
+scoreboard players set total_count total_count 0
+execute as @a run scoreboard players add total_count total_count 1
+execute if score conquest conquest matches 1 run bossbar remove status
+execute unless score conquest conquest matches 1 run bossbar set status players @a
+execute unless score conquest conquest matches 1 run bossbar set status name [{"text":"レッドチーム","color":"red"},{"text":" - ","color":"dark_gray"},{"score":{"name":"red_count","objective":"red_count"},"color":"gold"},{"text":" | ","color":"dark_gray"},{"score":{"name":"total_count","objective":"total_count"},"color":"white"},{"text":" | ","color":"dark_gray"},{"text":"ブルーチーム","color":"blue"},{"text":" - ","color":"dark_gray"},{"score":{"name":"blue_count","objective":"blue_count"},"color":"gold"}]
+
 # リスポーン
 execute if score conquest conquest matches 1 as @a if score @s death matches 1.. if score @s respawn_time matches -1 run function conquest_pvp:respawn/respawn
 execute if score conquest conquest matches 1 as @a[scores={death=1..}] unless entity @s[x=135,y=114,z=74,dx=12,dy=-5,dz=9] run tp @s 141 111 78
@@ -29,4 +36,3 @@ execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 3
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 2 run title @a title {"text":"2"}
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 1 run title @a title {"text":"1"}
 execute if score @e[tag=30_timer,limit=1,scores={tick=..5}] count_down matches 0 run function conquest_pvp:conquest/start
-

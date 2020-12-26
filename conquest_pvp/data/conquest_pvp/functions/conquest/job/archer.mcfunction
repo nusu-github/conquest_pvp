@@ -5,7 +5,7 @@ replaceitem entity @s hotbar.0 minecraft:bow{display:{Name:'{"text":"インフ�
 ## 無適用の矢
 replaceitem entity @s inventory.0 arrow 1
 ## 固定スキル 爆破
-replaceitem entity @s hotbar.1 carrot_on_a_stick{display: {Name: '[{"text":"固定スキル1:"},{"translate":"爆発"}]', Lore: ['{"text":"アーチャーの固有スキル:爆発"}', '{"text":"5秒間弓がクロスボウに、矢が花火になる"}', '{"text":"爆破は味方にも当たるので注意して使おう"}']}} 1
+replaceitem entity @s hotbar.1 carrot_on_a_stick{display: {Name: '[{"text":"固定スキル1:"},{"translate":"エクスプロージョン！！"}]', Lore: ['{"text":"アーチャーの固有スキル:エクスプロージョン！！"}', '{"text":"5秒間弓がクロスボウに、矢が花火になる"}', '{"text":"爆破は味方にも当たるので注意して使おう"}']}} 1
 
 replaceitem entity @s hotbar.7 minecraft:splash_potion{Potion:"minecraft:strong_healing"} 1
 ## 防具一式消去

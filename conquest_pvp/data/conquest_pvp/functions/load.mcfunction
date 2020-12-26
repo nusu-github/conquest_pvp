@@ -49,7 +49,7 @@ scoreboard objectives add sneak custom:sneak_time
 scoreboard objectives add sneak_time dummy
 scoreboard objectives add is_succeeded dummy
 scoreboard objectives add food food
-
+scoreboard objectives add uuidmost dummy
 ## その他
 scoreboard objectives add error dummy "誤差"
 scoreboard objectives add total_point dummy "トータルポイント"
@@ -60,7 +60,11 @@ scoreboard objectives add stage_red dummy "レッドステージ"
 scoreboard objectives add stage_blue dummy "ブルーステージ"
 scoreboard objectives add one_damage dummy "ダメージでキャンセル"
 scoreboard objectives add recharge dummy "リチャージ"
-
+scoreboard objectives add red_count dummy
+scoreboard objectives add blue_count dummy
+scoreboard objectives add total_count dummy
+scoreboard objectives add tmp_total_count dummy
+scoreboard objectives add division dummy
 
 ## ダメージ
 scoreboard objectives add damage custom:damage_taken "ダメージ"
@@ -72,8 +76,13 @@ scoreboard objectives add seconds dummy "秒"
 scoreboard objectives add count_down dummy
 scoreboard objectives add item dummy
 
+bossbar add status [{"text":"レッドチーム","color":"red"},{"text":" - ","color":"dark_gray"},{"score":{"name":"red_count","objective":"red_count"},"color":"gold"},{"text":" | ","color":"dark_gray"},{"score":{"name":"total_count","objective":"total_count"},"color":"white"},{"text":" | ","color":"dark_gray"},{"text":"ブルーチーム","color":"blue"},{"text":" - ","color":"dark_gray"},{"score":{"name":"blue_count","objective":"blue_count"},"color":"gold"}]
+
 ### リセット
 ## 試合中なら強制停止
+team leave @a
+bossbar remove blue_total_point
+bossbar remove red_total_point
 execute if score conquest conquest matches 1 run function conquest_pvp:conquest/emergency_stop
 scoreboard players reset death
 scoreboard players reset respawn_time
@@ -88,6 +97,10 @@ scoreboard players reset red
 scoreboard players reset blue
 scoreboard players reset stage_red
 scoreboard players reset stage_blue
+scoreboard players reset red_count
+scoreboard players reset blue_count
+scoreboard players reset total_count
+scoreboard players reset tmp_total_count
 scoreboard players reset assassin
 scoreboard players reset archer
 scoreboard players reset attacker
@@ -124,6 +137,10 @@ scoreboard players set @a red 0
 scoreboard players set @a blue 0
 scoreboard players set @a stage_red 0
 scoreboard players set @a stage_blue 0
+scoreboard players set @e red_count 0
+scoreboard players set @e blue_count 0
+scoreboard players set @e total_count 0
+scoreboard players set @e tmp_total_count 0
 scoreboard players set @a assassin 0
 scoreboard players set @a archer 0
 scoreboard players set @a attacker 0
@@ -145,5 +162,6 @@ scoreboard players set @a seconds 0
 scoreboard players set @a is_succeeded 0
 scoreboard players set @e item 0
 scoreboard players set @e count_down 0
+scoreboard players set division division 2
 
 say セットアップ完了

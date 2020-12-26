@@ -83,16 +83,12 @@ scoreboard players set ブルーチーム item 0
 team join red @e[tag=northeast]
 team join blue @e[tag=southwest]
 
-bossbar add red_total_point {"text":"レッドチーム"}
 bossbar add blue_total_point {"text":"ブルーチーム"}
+bossbar add red_total_point {"text":"レッドチーム"}
 bossbar set red_total_point color red
 bossbar set blue_total_point color blue
 bossbar set red_total_point max 50000
 bossbar set blue_total_point max 50000
-bossbar set red_total_point players @a
-bossbar set blue_total_point players @a
-bossbar set red_total_point name {"text":"レッドチーム"}
-bossbar set blue_total_point name {"text":"ブルーチーム"}
 bossbar set red_total_point value 0
 bossbar set blue_total_point value 0
 
