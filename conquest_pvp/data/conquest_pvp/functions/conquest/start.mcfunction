@@ -9,14 +9,8 @@ scoreboard players set @a sneak 0
 scoreboard players set @a sneak_time 0
 tp @a[team=red] 100 126 20
 tp @a[team=blue] 140 126 -20
-execute as @a[scores={assassin=1}] run function conquest_pvp:conquest/job/assassin
-execute as @a[scores={attacker=1}] run function conquest_pvp:conquest/job/attacker
-execute as @a[scores={tank=1}] run function conquest_pvp:conquest/job/tank
-execute as @a[scores={archer=1}] run function conquest_pvp:conquest/job/archer
-execute as @a[scores={support=1}] run function conquest_pvp:conquest/job/support
-replaceitem entity @a[team=red] hotbar.8 red_stained_glass_pane 1
-replaceitem entity @a[team=blue] hotbar.8 blue_stained_glass_pane 1
+execute as @a[team=!] at @s run function conquest_pvp:conquest/re_setup
 title @a title {"text":"ゲームスタート！"}
-say 勝利しろ！ 
+say 勝利しろ！
 effect clear @a
 kill @e[tag=30_timer]

@@ -1,7 +1,10 @@
-effect give @s instant_health 100 50
+function conquest_pvp:conquest/re_setup
+effect give @s instant_health 100 100
+effect give @s regeneration 100 255
+effect give @s resistance 100 255
 scoreboard players set @s target 0
 scoreboard players set @s respawn_time 9
-scoreboard players set @s seconds 120
+scoreboard players set @s seconds 0
 scoreboard players set @s used_crossbow 0
 scoreboard players set @s used_stick 0
 scoreboard players set @s used_shield 0

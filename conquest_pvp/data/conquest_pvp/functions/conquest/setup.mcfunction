@@ -17,31 +17,32 @@ summon area_effect_cloud 140 126 -20 {NoGravity: 1b, Duration: 32768, Tags: ["so
 # 北東
 fill 96 123 24 104 123 16 red_concrete replace
 fill 101 123 19 99 123 21 diamond_block replace
-setblock 100 125 20 red_stained_glass
+setblock 100 125 20 red_stained_glass replace
 # 北西
 fill 144 123 24 136 123 16 white_concrete replace
 fill 141 123 21 139 123 19 diamond_block replace
-setblock 140 125 20 air
+setblock 140 125 20 air replace
 # 南東
 fill 96 123 -24 104 123 -16 white_concrete replace
 fill 101 123 -19 99 123 -21 diamond_block replace
-setblock 100 125 -20 air
+setblock 100 125 -20 air replace
 # 南西
 fill 144 123 -24 136 123 -16 blue_concrete replace
 fill 141 123 -21 139 123 -19 diamond_block replace
-setblock 140 125 -20 blue_stained_glass
-
-scoreboard objectives setdisplay belowName kill_count
-scoreboard objectives setdisplay list death_count
+setblock 140 125 -20 blue_stained_glass replace
 
 ## リスポン
 scoreboard players set @a death 0
 scoreboard players set @a respawn_time -1
 scoreboard players set @a target 0
 scoreboard players set @a food 0
+
 ## 表示
+scoreboard players reset * death_count
+scoreboard players reset * kill_count
 scoreboard players set @a death_count 0
 scoreboard players set @a kill_count 0
+
 ### コンクエスト
 scoreboard players set @a assassin 0
 scoreboard players set @a archer 0
@@ -50,6 +51,7 @@ scoreboard players set @a tank 0
 scoreboard players set @a support 0
 scoreboard players set @a one_damage 0
 scoreboard players set @a recharge 0
+
 ## スキル
 scoreboard players set @a used_stick 0
 scoreboard players set @a used_shield 0
@@ -57,9 +59,13 @@ scoreboard players set @a used_crossbow 0
 scoreboard players set @a inground_arrow 0
 scoreboard players set @a used_potion 0
 scoreboard players set conquest conquest 0
-scoreboard objectives setdisplay sidebar kill_count
 scoreboard players set @a sneak 0
 scoreboard players set @a sneak_time 0
+
+# ディスプレイ系セット
+scoreboard objectives setdisplay belowName kill_count
+scoreboard objectives setdisplay list death_count
+scoreboard objectives setdisplay sidebar kill_count
 
 team remove red
 team remove blue

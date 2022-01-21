@@ -1,3 +1,4 @@
+
 execute as @s[scores={sneak=1..,sneak_time=0}] at @s run xp add @s -2 levels
 execute as @s[scores={sneak=1..,sneak_time=0}] at @s run effect give @s speed 1 2
 execute as @s[scores={sneak=1..,sneak_time=0}] at @s run effect give @s jump_boost 1 2

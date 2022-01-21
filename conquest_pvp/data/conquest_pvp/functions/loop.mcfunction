@@ -1,33 +1,33 @@
-#ティックごとの処理
+# ティックごとの処理
 
-# リスポーン場所を常に設定し続ける　絶対重いのでどうにかしたい所存
+## リスポーン場所を常に設定し続ける
 execute unless score conquest conquest matches 1 as @a at @s run spawnpoint @s ~ ~ ~
-effect give @a[scores={food=..19}] saturation 1 255
 
+## 空腹にならないようにする
+effect give @a[nbt=!{foodLevel: 20}] saturation 1 50 true
+
+## 人数を表示
 scoreboard players set total_count total_count 0
 execute as @a run scoreboard players add total_count total_count 1
-execute if score conquest conquest matches 1 run bossbar remove status
-execute unless score conquest conquest matches 1 run bossbar set status players @a
-execute unless score conquest conquest matches 1 run bossbar set status name [{"text":"レッドチーム","color":"red"},{"text":" - ","color":"dark_gray"},{"score":{"name":"red_count","objective":"red_count"},"color":"gold"},{"text":" | ","color":"dark_gray"},{"score":{"name":"total_count","objective":"total_count"},"color":"white"},{"text":" | ","color":"dark_gray"},{"text":"ブルーチーム","color":"blue"},{"text":" - ","color":"dark_gray"},{"score":{"name":"blue_count","objective":"blue_count"},"color":"gold"}]
+bossbar set status players @a
+execute if score conquest conquest matches 1 run bossbar set status visible false
+execute unless score conquest conquest matches 1 run bossbar set status visible true
 
-# リスポーン
-execute if score conquest conquest matches 1 as @a if score @s death matches 1.. if score @s respawn_time matches -1 run function conquest_pvp:respawn/respawn
-execute if score conquest conquest matches 1 as @a[scores={death=1..}] unless entity @s[x=135,y=114,z=74,dx=12,dy=-5,dz=9] run tp @s 141 111 78
-effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] instant_health 1 255
-effect give @a[x=135,y=114,z=74,dx=12,dy=-5,dz=9] resistance 1 255
+## リスポーン場所に変なものがないようにする
 kill @e[x=135,y=114,z=74,dx=12,dy=-5,dz=9,type=!player]
-# コンクエストモード時コンクエスト用のチェックを実行
+
+## コンクエストモード時コンクエスト用のチェックを実行
 execute if score conquest conquest matches 1 run function conquest_pvp:conquest/check
 
-# チーム加入
-#team leave @a[x=-13,y=4,z=-13,dx=27,dy=1,dz=27]
+## チーム加入
+# team leave @a[x=-13,y=4,z=-13,dx=27,dy=1,dz=27]
 team join red @a[x=12,y=4,z=-12,dx=-4,dy=1,dz=6]
 team join blue @a[x=12,y=4,z=12,dx=-4,dy=1,dz=-6]
 
-# 会場にご案内
+## 会場にご案内
 tp @e[x=0,z=-11,dx=2,dz=1] 120 110 72
 
-# タイマー
+## タイマー
 execute as @e[tag=30_timer] run function conquest_pvp:time
 scoreboard players operation @e[tag=30_timer] count_down -= @e[tag=30_timer] seconds
 execute as @e[tag=30_timer,scores={seconds=1..}] run scoreboard players set @s seconds 0
